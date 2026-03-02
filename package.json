@@ -1,14 +1,13 @@
 {
-  "dependencies": {
-    "express": "^5.2.1"
-  },
   "name": "demo-devops-project",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +16,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Ellie-404/Demo-DevOps-Project/issues"
   },
-  "homepage": "https://github.com/Ellie-404/Demo-DevOps-Project#readme"
+  "homepage": "https://github.com/Ellie-404/Demo-DevOps-Project#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
