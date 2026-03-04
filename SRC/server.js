@@ -28,4 +28,4 @@ app.get("/", (req, res) => {
 });
 
 //Server and what port it should listen to
-app.listen(3000, () => console.log("Server kjører på http://localhost:3000"));
+app.listen(3000, () => console.log("Server runs on http://localhost:3000"));
