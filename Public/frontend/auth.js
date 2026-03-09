@@ -1,25 +1,27 @@
 
-async function authentication(){// This function should not run with anything else.
-    const username = document.getElementById("username").value; 
+async function register(){// This function should not run with anything else.
+    const regUsername = document.getElementById("regUsername").value; 
+    const regPassword = document.getElementById("regPassword").value;
 
-    console.log("username input: " + username);
+    console.log("username input: " + regUsername);
+    console.log("password input:" + regPassword);
 
-    if(!username){
-        console.log("Missing username...");
+    if(!regUsername || !regPassword){
+        console.log("Missing username or password...");
     }
 
     // can never run alone... needs a catch.
     try{    
         //authReq awaits a link and then sends over info/data to backend.
-        const authReq = await fetch("http://localhost:3000/api/auth/login", {
+        const authReq = await fetch("http://localhost:3000/api/auth/register", {
             method: "POST",
             headers:{
                 "content-type" : "application/json"
             },
             credentials: "include",
-            body: JSON.stringify({username})
+            body: JSON.stringify({regUsername, regPassword})
         });
-        
+
         const authRes = await authReq.json();
     
     } catch(error){
