@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 
 //Routes import
 import userRoutes from "../src/routes/authRoutes.js";
+import machineRoutes from "./routes/machineRoutes.js"
 
 // __dirname in ESM(a way of defining dynamic filepaths)
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +23,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 //API routes, We use false routings from frontend and route to the correct pathways
 app.use("/api/auth", userRoutes);
 
+app.use("/api/machine", machineRoutes);
+
 //HTML-site we are using in the project
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "index.html"));
@@ -35,8 +38,8 @@ app.get("/weather", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "weatherPage.html"));
 });
 //HTML-page for user
-app.get("/user", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "userPage.html"));
+app.get("/machine", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "machinePage.html"));
 });
 
 //Server and what port it should listen to
