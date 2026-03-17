@@ -44,7 +44,7 @@ async function authenticate(){// This function should not run with anything else
     const loginUsername = document.getElementById("loginUsername").value; 
     const loginPassword = document.getElementById("loginPassword").value;
 
-    const regStatusMsg = document.getElementById("regStatus");
+    const logStatusMsg = document.getElementById("loginStatus");
 
     console.log("username input: " + loginUsername);
     console.log("password input:" + loginPassword);
@@ -71,11 +71,11 @@ async function authenticate(){// This function should not run with anything else
         if(logRes.success === true){
 
             window.location.href = "start"
-            regStatusMsg.textContent = "success!";
-            regStatusMsg.style.color = "green";
+            logStatusMsg.textContent = "success!";
+            logStatusMsg.style.color = "green";
         }else{
-            regStatusMsg.textContent = "Wrong username or password";
-            regStatusMsg.style.color = "red";
+            logStatusMsg.textContent = "Wrong username or password";
+            logStatusMsg.style.color = "red";
         }
     
     } catch(error){
