@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="CSS/Style.css">
 </head>
 <body>
-        
     <div id="register">
-        <h1>Create a user</h1>
+        <h1>Create user:</h1>
         <input type="text" name="" placeholder="Username" id="regUsername">
         <br>
         <input type="text" name="" placeholder="Password" id="regPassword">
+        <p id="regStatus"></p>
         <button onclick="register()">Register</button>
+    </div>
+
+    <div id="login">
+        <h1>login:</h1>
+        <input type="text" name="" placeholder="Username" id="loginUsername">
+        <br>
+        <input type="text" name="" placeholder="Password" id="loginPassword">
+        <p id="loginStatus"></p>
+        <button onclick="authenticate()">login</button>
     </div>
 
 <script src="frontend/auth.js"></script>
