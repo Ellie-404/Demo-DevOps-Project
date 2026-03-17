@@ -27,12 +27,12 @@ export async function register(req, res){
 }
 
 export async function login(req, res){
-    const {logUsername, logPassword} = req.body;
+    const {loginUsername, loginPassword} = req.body;
 
-    console.log("authController logUsername", logUsername);
-    console.log("authController logPassword", logPassword);
+    console.log("authController logUsername", loginUsername);
+    console.log("authController logPassword", loginPassword);
 
-    const {data:logUser} = await loginUser(logUsername, logPassword);
+    const {data:logUser} = await loginUser(loginUsername, loginPassword);
     console.log("authController logUser (info from database)", logUser);
 
     if(logUser){

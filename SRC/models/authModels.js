@@ -11,10 +11,10 @@ export async function registerUsers(regUsername, hashPassword){
     .select();
 }
 
-export async function loginUser (loginUsername, logPassword){
+export async function loginUser (loginUsername, loginPassword){
     return await supabase
     .from("Users")
     .select("UserID, Username, Password")
-    .eq("Username", logUsername)
+    .eq("Username", loginUsername)
     .single();
 }

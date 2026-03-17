@@ -69,11 +69,13 @@ async function authenticate(){// This function should not run with anything else
         console.log(logRes);
 
         if(logRes.success === true){
-            logStatusMsg.textContent = "success!";
-            logStatusMsg.style.color = "green";
+
+            window.location.href = "start"
+            regStatusMsg.textContent = "success!";
+            regStatusMsg.style.color = "green";
         }else{
-            logStatusMsg.textContent = "Wrong username or password";
-            logStatusMsg.style.color = "red";
+            regStatusMsg.textContent = "Wrong username or password";
+            regStatusMsg.style.color = "red";
         }
     
     } catch(error){
