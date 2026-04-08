@@ -10,7 +10,6 @@ export async function regMachine(req, res){
 
     const { data: registerMachine } = await registerMachines(machineName, serialNumb);
 
-
     console.log("machineController test delivery of database", registerMachine)
     if(registerMachine){
         console.log("machineController register: machine registered");
@@ -19,5 +18,4 @@ export async function regMachine(req, res){
         console.log("machineController register: machine not registered")
         return res.json({success: false});
     }
-
 }
