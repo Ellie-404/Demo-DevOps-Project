@@ -2,6 +2,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import cookieParser from "cookie-parser";
 
 //Routes import
 import userRoutes from "../src/routes/authRoutes.js";
@@ -13,6 +14,7 @@ const __dirname = path.dirname(__filename);
 
 //Initiates express as a constant
 const app = express();
+app.use(cookieParser());
 
 //basic middleware
 app.use(express.json());

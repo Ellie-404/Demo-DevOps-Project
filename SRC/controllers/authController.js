@@ -52,7 +52,7 @@ export async function login(req, res){
             httpOnly:true,
             secure:false,
             sameSite:"strict",
-            maxAge: 1000*60
+            maxAge: 1000*60*20
         })
         .json({
             success:true,
@@ -74,4 +74,19 @@ export async function verify(req, res){
         logIn:true,
         user: req.user
     })
+}
+
+export function logOut(req, res){
+    return res.cookie("jwt", "",{
+        httpOnly: true,
+        secure: false,
+        sameSite: "strict",
+        maxAge: 0,
+        path:"/"
+    })
+    .json({
+        success:true,
+        message: "loggedOut"
+
+    });
 }

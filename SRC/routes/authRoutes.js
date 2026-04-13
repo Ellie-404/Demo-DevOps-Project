@@ -9,5 +9,6 @@ const router = Router();
 router.post("/register", authController.register);
 router.post("/login", authController.login);
 
-router.get("/verify", verifyToken, authController.verify)
+router.get("/verify", verifyToken, authController.verify);
+router.get("/logOut", authController.logOut);
 export default router;
