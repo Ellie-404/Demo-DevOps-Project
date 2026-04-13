@@ -25,14 +25,43 @@ async function regMachine(){// This function should not run with anything else.
         console.log(machineRes);
 
         if(machineRes.success === true){
-            regStatusMsg.textContent = "User registered";
+            regStatusMsg.textContent = "Machine registered";
             regStatusMsg.style.color = "green";
         }else{
-            regStatusMsg.textContent = "User not registered";
+            regStatusMsg.textContent = "Machine not registered";
             regStatusMsg.style.color = "red";
         }
     
     } catch(error){
         console.log("Try did not work...");
     }
+    fetchMachineInfo();
 }
+
+async function fetchMachineInfo(){
+    try{
+        const allMachineReq = await fetch("http://localhost:3000/api/machine/list");
+        const allMachineRes = await allMachineReq.json();
+        console.log(allMachineRes);
+
+        const machineDiv = document.getElementById("machineDiv");
+        machineDiv.innerHTML ='';
+
+        allMachineRes.allMachines.forEach(machine => {
+            const machineElement = document.createElement("div");
+            machineElement.className = "machines";
+            machineElement.innerHTML = 
+            `
+                <p>MachineName: ${machine.Machine_name}</p>
+                <p>SerialNumb: ${machine.Serial}</p>
+                <p>MachineID: ${machine.machineID}</p>
+            `;
+            machineDiv.appendChild(machineElement);
+        });
+
+    }catch (error){
+        console.log("Failed to get Machine info...")
+    }
+}
+
+document.addEventListener("DOMContentLoaded", fetchMachineInfo);

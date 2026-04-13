@@ -10,3 +10,9 @@ export async function registerMachines(machineName, serialNumb){
     }])
     .select();
 }
+
+export async function getAllMachines(){
+    return await supabase
+        .from("Machines")
+        .select("*");
+}

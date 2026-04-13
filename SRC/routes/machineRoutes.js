@@ -5,5 +5,6 @@ import * as machineController from "../controllers/machineController.js";
 const router = Router();
 
 router.post("/regMachine", machineController.regMachine);
+router.get("/list", machineController.list);
 
 export default router;
