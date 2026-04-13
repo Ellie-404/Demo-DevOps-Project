@@ -59,7 +59,7 @@ async function authenticate(){// This function should not run with anything else
         const logReq = await fetch("http://localhost:3000/api/auth/login", {
             method: "POST",
             headers:{
-                "content-type" : "application/json"
+                "Content-Type" : "application/json"
             },
             credentials: "include",
             body: JSON.stringify({loginUsername, loginPassword})
