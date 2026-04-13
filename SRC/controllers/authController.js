@@ -41,7 +41,7 @@ export async function login(req, res){
     console.log(logUser);
     if(checkPassword.success === true){
         const tokenPayLoad = {
-            sub: string(logUser.UserID),
+            sub: String(logUser.UserID),
             username: logUser.Username
         }
 
