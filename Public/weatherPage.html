@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherPage</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css\Style.css">
 </head>
 <body>
-    <h1>WeatherPage</h1>
+    <div id="page">
+        <div id="header">
+            <h1>WeatherPage</h1>
+            <button>click here for weather data</button>
+            <div id="cords"></div>
+        </div>
+        <div id="content">
+            <div id="map"></div>
+            <div id="weatherData"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js\weather.js"></script>
 </body>
 </html>

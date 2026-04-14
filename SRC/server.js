@@ -6,7 +6,8 @@ import cookieParser from "cookie-parser";
 
 //Routes import
 import userRoutes from "../src/routes/authRoutes.js";
-import machineRoutes from "./routes/machineRoutes.js"
+import machineRoutes from "./routes/machineRoutes.js";
+import weatherRoutes from "../src/routes/weatherRoutes.js";
 
 // __dirname in ESM(a way of defining dynamic filepaths)
 const __filename = fileURLToPath(import.meta.url);
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 //API routes, We use false routings from frontend and route to the correct pathways
 app.use("/api/auth", userRoutes);
 app.use("/api/machine", machineRoutes);
+api.use("/api/vaer",weatherRoutes);
 
 //HTML-site we are using in the project
 app.get("/", (req, res) => {
