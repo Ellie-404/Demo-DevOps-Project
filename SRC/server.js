@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 //API routes, We use false routings from frontend and route to the correct pathways
 app.use("/api/auth", userRoutes);
 app.use("/api/machine", machineRoutes);
-api.use("/api/vaer",weatherRoutes);
+app.use("/api/vaer", weatherRoutes);
 
 //HTML-site we are using in the project
 app.get("/", (req, res) => {

@@ -33,9 +33,7 @@ async function fetchWeatherData(){
             });
         const weatherRes = await weatherReq.json();
         console.log(weatherRes);
- 
         const weatherDiv = document.getElementById('weatherData');
-   
         weatherDiv.innerHTML = '';
         const weatherElement = document.createElement('div');
         weatherElement.className = 'vaer';
